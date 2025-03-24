@@ -30,7 +30,7 @@ while True:
     print(products_dict)
 
     if n == 14:
-        print("Scraping complete.") # this number is hard codes which is not ideal but it'll do for the moment
+        print("Scraping complete.") # this number is hard coded which is not ideal but it'll do for the moment
         break
 
     base_url = f'https://www.pakatatu.com/categoria-produto/loja/page/{n}/'
