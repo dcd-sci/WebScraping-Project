@@ -10,10 +10,10 @@ n = 2
 products_dict = {}
 
 while True:
-    print(f'\nScraping for: {base_url}')
+    print(f'\nScraping {base_url}')
 
     req = requests.get(base_url)
-    print(f'Status code of request: {req.status_code}')
+    print(f'Status code: {req.status_code}')
 
     if req.status_code != 200:
         print('Something went wrong: status code not 200')
@@ -30,15 +30,14 @@ while True:
     print(products_dict)
 
     if n == 14:
-        print("Scraping complete.")
+        print("Scraping complete.") # this number is hard codes which is not ideal but it'll do for the moment
         break
 
     base_url = f'https://www.pakatatu.com/categoria-produto/loja/page/{n}/'
-
     n += 1
+
 
 with open('products.txt', 'w', encoding='utf-8') as file:
     for product_name, product_price in products_dict.items():
         file.write(f'{product_name} - {product_price}\n')
-
 print('Content saved in "products.txt" file.')
